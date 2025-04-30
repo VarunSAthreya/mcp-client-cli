@@ -1,0 +1,27 @@
+{
+  "name": "mcp-client",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning --disable-warning=DeprecationWarning -r esbuild-runner/register src/index.ts",
+    "dev": "nodemon 'node -r esbuild-runner/register' src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "axios": "^1.9.0",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7",
+    "openai": "^4.96.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "esbuild": "^0.25.3",
+    "esbuild-runner": "^2.2.2",
+    "nodemon": "^3.1.10",
+    "typescript": "^5.8.3"
+  }
+}
