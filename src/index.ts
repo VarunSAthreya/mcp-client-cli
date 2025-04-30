@@ -5,13 +5,13 @@ import chalk from "chalk";
 import "dotenv/config";
 import { stdin as input, stdout as output } from "node:process";
 import readline from "node:readline/promises";
-import OpenAI from "openai";
 
-type Msg = { role: "system" | "user" | "assistant" | "tool"; content: string };
+type Msg = {
+  role: "system" | "user" | "assistant" | "tool";
+  content: string;
+};
+
 (async () => {
-  const openai = new OpenAI({
-    apiKey: process.env["OPENAI_API_KEY"],
-  });
   let TOOLS: any[] = [];
 
   const serverConfig = JSON.parse(process.env.SERVER_CONFIG || "{}");
@@ -163,9 +163,8 @@ type Msg = { role: "system" | "user" | "assistant" | "tool"; content: string };
   await getTools();
   console.log(
     chalk.blueBright(
-      `Tools: ${TOOLS.length}, [${TOOLS.map((tool) => tool.function.name).join(
-        ", "
-      )}]`
+      `Tools: ${TOOLS.length}
+      [${TOOLS.map((tool) => tool.function.name).join(", ")}]`
     )
   );
 
